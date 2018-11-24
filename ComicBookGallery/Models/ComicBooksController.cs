@@ -9,9 +9,19 @@ namespace ComicBookGallery.Models
 {
     public class ComicBooksController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the comic books controller!";
+            if(DateTime.Today.DayOfWeek== DayOfWeek.Monday)
+            {
+                return Redirect("/"); //"/" represents the root of the website
+            }
+            return Content("Hello from the comic books controller!");
+            
+              
+            
+            
+            
+            
         }
     }
 }
